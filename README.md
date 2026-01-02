@@ -1,5 +1,20 @@
 <div align=center><img src=https://tomcat.zeta2374.com/image/ez.png height=200></div>
 
+# using docker 
+
+```sh
+docker run -it --name ubuntu-dev -v ${PWD}:/workspace ubuntu:latest /bin/bash
+docker exec -it ubuntu-dev /bin/bash
+```
+
+## install environment
+
+```sh
+apt update 
+apt install -y libjsoncpp-dev nettle-dev libgmpxx4ldbl
+apt install -y build-essential
+```
+
 # eZ Framework는 stateful C++ Server Side Web Development Framework입니다.
 
 
