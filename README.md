@@ -3,8 +3,12 @@
 # using docker 
 
 ```sh
-docker run -it --name ubuntu-dev -v ${PWD}:/workspace ubuntu:latest /bin/bash
-docker exec -it ubuntu-dev /bin/bash
+# Reuse a persistent container (recommended)
+./dev-ubuntu-dev2.sh
+
+# Or create/enter manually
+docker run -it --name ubuntu-dev2 -v ${PWD}:/workspace -w /workspace ubuntu:latest /bin/bash
+docker exec -it ubuntu-dev2 /bin/bash
 ```
 
 ## install environment
@@ -13,6 +17,13 @@ docker exec -it ubuntu-dev /bin/bash
 apt update 
 apt install -y libjsoncpp-dev nettle-dev libgmpxx4ldbl
 apt install -y build-essential
+```
+
+## build
+
+```sh
+# inside ubuntu-dev2
+make || make safe
 ```
 
 # eZ Framework는 stateful C++ Server Side Web Development Framework입니다.
