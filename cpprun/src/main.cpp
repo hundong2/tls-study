@@ -8,6 +8,7 @@
 #include <boost/version.hpp>
 
 #include "cpprun/hello.hpp"
+#include "mpz.h"
 
 static std::string join_words(std::string_view input) {
     std::vector<std::string> parts;
